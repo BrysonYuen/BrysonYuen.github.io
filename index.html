@@ -106,8 +106,8 @@ function create() {
     
 }
 
-Baddie = function (game, -160, 260, destination) {
-    Phaser.Sprite.call(this, game, -160, 260, "baddie");
+Baddie = function (game, x, y, destination) {
+    Phaser.Sprite.call(this, game, x, y, "baddie");
     game.physics.enable(this, Phaser.Physics.ARCADE);
     this.collideWorldBounds = true;
     this.enableBody = true;
