@@ -105,8 +105,8 @@ function create() {
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
 
-	this.baddie.animations.add('float', [animFrame, animFrame + 1], 10, true);            
-	this.baddie.animations.play('float');            
+	baddie.animations.add('float', [animFrame, animFrame + 1], 10, true);            
+	baddie.animations.play('float');            
 	game.physics.enable(this.baddie, Phaser.Physics.ARCADE);            
                         
 
@@ -123,13 +123,13 @@ function update() {
 
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
-		this.baddie.body.velocity.x = -50;            
-	this.baddie.body.velocity.y = 30;            
-	this.baddieDead = false;    
+	baddie.body.velocity.x = -50;            
+	baddie.body.velocity.y = 30;            
+	baddieDead = false;    
 	
-	if (this.baddie.body.y > 320) {                
-	this.baddieDead = true;                
-	this.baddie.destroy();
+	if (baddie.body.y > 320) {                
+	baddieDead = true;                
+	baddie.destroy();
 	}
 
     if (cursors.left.isDown)
