@@ -129,7 +129,7 @@ function update() {
 	
 	if (this.baddie.body.y > 320) {                
 	this.baddieDead = true;                
-	this.baddie.kill();
+	this.baddie.destroy();
 	}
 
     if (cursors.left.isDown)
