@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script src = "p5.js"></script>
+    <script src = "p5.dom.min.js"></script>
+    <script src = "p5.sound.js"></script>
+    <script src = "snakev2js.js"></script>
+  </head>
+  <body>
+    <h1 id ="showScore">Hello</h1>
+    <script>
+      var food;
+var s;
+var scl = 20;
+var vh = window.innerHeight;
+var vw = window.innerWidth;
+var fRate = 10;
+var w = 500; //global width
+var h = 500; //global height
+var eat;
+
+function preload() {
+  soundFormats('mp3', 'ogg');
+  eat = loadSound('eat.mp3');
+}
+  
+function setup() {
+  createCanvas(w,h);
+  s = new Snake();
+  foodLocation();
+}
+      
+function draw() {
+  background(75,0,130);
+  frameRate(fRate);
+  s.show();
+  s.update();
+  s.death();
+  fill(255,0,0); //This is the apple color
+  rect(food.x, food.y, scl, scl); //This is the shape of the apple
+  if (s.eat(food)) {
+    foodLocation();
+  }
+}
+      
+function keyPressed() {
+  if (keyCode === UP_ARROW) {
+    s.dir(0,-1);
+  }
+  else if (keyCode === DOWN_ARROW) {
+    s.dir(0,1);
+  }
+  else if (keyCode === LEFT_ARROW) {
+    s.dir(-1,0);
+  }
+  else if (keyCode === RIGHT_ARROW) {
+    s.dir(1,0);
+  }
+}
+    </script>
+  </body>
+</html>
