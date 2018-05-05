@@ -14,8 +14,8 @@ function Snake() { //This is the Snake constructor
       this.total++; //Add one to the total
       document.getElementById('showScore').innerHTML = this.total;
       fRate++;
-      eat.soundVolume(1.0);
-      eat.play();
+      //eat.soundVolume(1.0);
+      //eat.play();
       return true;
     }
     else {
